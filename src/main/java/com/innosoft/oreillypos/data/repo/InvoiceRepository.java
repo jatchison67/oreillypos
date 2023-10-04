@@ -8,5 +8,5 @@ import java.util.List;
 
 @Repository
 public interface InvoiceRepository extends CrudRepository<Invoice, Long> {
-    List<Invoice> findByCustomer_Id(Long id);
+    List<Invoice> findByCustomerid(Long id);
 }

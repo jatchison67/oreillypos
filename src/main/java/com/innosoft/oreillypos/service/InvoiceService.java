@@ -15,11 +15,11 @@ public class InvoiceService {
 @Autowired
     InvoiceRepository invoiceRepository;
     public Map<Long, String> getTenderDetails(Long customer_id){
-        List<Invoice> invoices = invoiceRepository.findByCustomer_Id(customer_id);
+        List<Invoice> invoices = invoiceRepository.findByCustomerid(customer_id);
         Map<Long, String> tenderMap = new HashMap<>();
         for(Invoice invoice : invoices){
             try {
-                tenderMap.put(invoice.getInvoice_id(), invoice.getInvoice_data().getString("type"));
+                tenderMap.put(invoice.getInvoiceid(), invoice.getInvoice_data().getString("type"));
             }
             catch (JSONException ex){
                 System.out.println(ex.getMessage());

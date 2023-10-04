@@ -10,8 +10,10 @@ import org.json.JSONObject;
 @Table(name = "invoice")
 public class Invoice {
     @Id
-    private long customer_id;
-    private long invoice_id;
+    @Column(name = "customer_id", nullable = false)
+    private long customerid;
+    @Column(name = "invoice_id", nullable = false)
+    private long invoiceid;
     @Column(columnDefinition = "TEXT")
     @Convert(converter= JSONObjectConverter.class) //Convert string to JSON
     private JSONObject invoice_data;
